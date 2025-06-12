@@ -37,8 +37,7 @@ async function getdaybynumber() {
         if (isNaN(daynumber) || daynumber < 1 || daynumber > 7) {
           console.error('Invalid input. Please enter a number between 1 and 7.');
           continue;
-        }
-        else {
+        } else {
           console.log(`The day of the week is: ${days[daynumber]}`);
       }
     catch (error) {
