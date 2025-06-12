@@ -16,7 +16,7 @@ import { read } from 'read';
 
 async function getdaybynumber() {
   list const days = [
-  "Sunday": 1;
+  "Sunday": 1,
   "Monday": 2,
   "Tuesday": 3,
   "Wednesday": 4,
@@ -28,12 +28,13 @@ async function getdaybynumber() {
   while (true) {
     try {
       const result = await read({prompt: 'Enter a number between 1 and 7:'});
-      if (isNaN(result) || result < 1 || result > 7) {
+      const daynumber = Number(result);
+      if (isNaN(daynumber) || daynumber < 1 || daynumber > 7) {
         console.error('Invalid input. Please enter a number between 1 and 7.');
         continue;
       }
       else {
-        console.log(`The day of the week is: ${days[result]}`);
+        console.log(`The day of the week is: ${days[daynumber]}`);
     }
     catch (error) {
       console.error('Error reading input:', error);
