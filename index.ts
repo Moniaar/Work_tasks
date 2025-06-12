@@ -15,15 +15,15 @@
 import { read } from 'read';
 
 async function getdaybynumber() {
-  list const days = [
-  "Sunday": 1,
-  "Monday": 2,
-  "Tuesday": 3,
-  "Wednesday": 4,
-  "Thursday": 5,
-  "Friday": 6,
-  "Saturday": 7
-];
+  const days: { [key: number]: string } = {
+    1: "Sunday",
+    2: "Monday",
+    3: "Tuesday",
+    4: "Wednesday",
+    5: "Thursday",
+    6: "Friday",
+    7: "Saturday"
+  };
 
   process.on('SIGINT', () => {
     console.log('\nExiting program...');
@@ -41,10 +41,10 @@ async function getdaybynumber() {
         else {
           console.log(`The day of the week is: ${days[daynumber]}`);
       }
-      catch (error) {
-        console.error('Error reading input:', error);
-      }
+    catch (error) {
+      console.error('Error reading input:', error);
     }
   }
+}
 
 getdaybynumber();
