@@ -29,8 +29,7 @@ async function getdaybynumber() {
     console.log('\nExiting program...');
     process.exit(0); // Exit with success code
   });
-
-   while (true) {
+  while (true) {
       try {
         const result = await read({prompt: 'Enter a number between 1 and 7:'});
         const daynumber = Number(result);
