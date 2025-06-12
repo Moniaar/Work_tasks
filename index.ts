@@ -25,26 +25,26 @@ async function getdaybynumber() {
   "Saturday": 7
 ];
 
-process.on('SIGINT', () => {
-  console.log('\nExiting program...');
-  process.exit(0); // Exit with success code
-});
+  process.on('SIGINT', () => {
+    console.log('\nExiting program...');
+    process.exit(0); // Exit with success code
+  });
 
-  while (true) {
-    try {
-      const result = await read({prompt: 'Enter a number between 1 and 7:'});
-      const daynumber = Number(result);
-      if (isNaN(daynumber) || daynumber < 1 || daynumber > 7) {
-        console.error('Invalid input. Please enter a number between 1 and 7.');
-        continue;
+   while (true) {
+      try {
+        const result = await read({prompt: 'Enter a number between 1 and 7:'});
+        const daynumber = Number(result);
+        if (isNaN(daynumber) || daynumber < 1 || daynumber > 7) {
+          console.error('Invalid input. Please enter a number between 1 and 7.');
+          continue;
+        }
+        else {
+          console.log(`The day of the week is: ${days[daynumber]}`);
       }
-      else {
-        console.log(`The day of the week is: ${days[daynumber]}`);
-    }
-    catch (error) {
-      console.error('Error reading input:', error);
+      catch (error) {
+        console.error('Error reading input:', error);
+      }
     }
   }
-}
 
 getdaybynumber();
