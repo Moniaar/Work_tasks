@@ -15,34 +15,39 @@
 import { read } from 'read';
 
 async function getdaybynumber() {
+  // assigned the days of the week to an object with keys as numbers
   const days: { [key: number]: string } = {
-    1: "Sunday",
-    2: "Monday",
-    3: "Tuesday",
-    4: "Wednesday",
-    5: "Thursday",
-    6: "Friday",
-    7: "Saturday"
+    1: 'Sunday',
+    2: 'Monday',
+    3: 'Tuesday',
+    4: 'Wednesday',
+    5: 'Thursday',
+    6: 'Friday',
+    7: 'Saturday'
   };
 
-  process.on('SIGINT', () => {
-    console.log('\nExiting program...');
-    process.exit(0); // Exit with success code
-  });
   while (true) {
-      try {
-        const result = await read({prompt: 'Enter a number between 1 and 7:'});
-        const daynumber = Number(result);
-        if (isNaN(daynumber) || daynumber < 1 || daynumber > 7) {
-          console.error('Invalid input. Please enter a number between 1 and 7.');
-          continue;
-        } else {
-          console.log(`The day of the week is: ${days[daynumber]}`);
+    try {
+      const result = await read({ prompt: 'Enter a number between 1 and 7: ' });
+      // handling exit condition for the user if they want to stop
+      if (result.toLowerCase() === 'exit') {
+        console.log('Exiting program...');
+        process.exit(0);
       }
-    catch (error) {
+      // Convert the input to a number for it to be checked
+      // handling edge cases where the input is not a number
+      const daynumber = Number(result);
+      if (isNaN(daynumber) || daynumber < 1 || daynumber > 7) {
+        console.error('Invalid input. Please enter a number between 1 and 7.');
+        continue;
+      } else {
+        console.log(`The day of the week is: ${days[daynumber]}`);
+      }
+    } catch (error) {
       console.error('Error reading input:', error);
     }
   }
 }
+
 
 getdaybynumber();
