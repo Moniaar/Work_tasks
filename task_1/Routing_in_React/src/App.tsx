@@ -1,12 +1,14 @@
 import { useState } from 'react'
 import design from './assets/design1.png'
 import './App.css'
+import Navbar from '../src/pages/Navbar.tsx'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
+      <Navbar />
       <div>
         <img src={design} className="logo" alt="My website" />
       </div>
