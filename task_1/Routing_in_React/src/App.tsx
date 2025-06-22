@@ -1,6 +1,12 @@
 import { useState } from 'react'
+
+// To enable Routing
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+
 import design from './assets/design1.png'
 import './App.css'
+
+//Mentioning components here
 import Navbar from '../src/pages/Navbar.tsx'
 
 function App() {
