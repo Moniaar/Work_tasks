@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import design from './assets/design1.png'
+import Projects from './pages/Projects.tsx'
 import './App.css'
 
 //Mentioning components here
@@ -14,7 +15,13 @@ function App() {
 
   return (
     <>
-      <Navbar />
+      <Router>
+        <Navbar />
+        <Routes>
+          {/* Defined routes here */}
+          <Route path="./pages/Projects" element={<Projects />} />
+        </Routes>
+      </Router>
       <div>
         <img src={design} className="logo" alt="My website" />
       </div>
@@ -23,13 +30,7 @@ function App() {
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }
