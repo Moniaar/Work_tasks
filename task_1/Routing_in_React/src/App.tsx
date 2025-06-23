@@ -11,8 +11,6 @@ import './App.css'
 import Navbar from '../src/pages/Navbar.tsx'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
       <Router>
@@ -26,11 +24,6 @@ function App() {
         <img src={design} className="logo" alt="My website" />
       </div>
       <h1>Coming Soon ...</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-      </div>
     </>
   )
 }
