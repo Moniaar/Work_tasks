@@ -19,7 +19,7 @@ function App() {
         <Navbar />
         <Routes>
           {/* Defined routes here */}
-          <Route path="./pages/Projects" element={<Projects />} />
+          <Route path="/Projects" element={<Projects />} />
         </Routes>
       </Router>
       <div>
