@@ -1,5 +1,6 @@
 // I used "useState" to manage the open/close state of the navbar
 
+import { Link } from "react-router-dom";
 import { useState } from 'react'
 
 
@@ -14,9 +15,8 @@ export default function Navbar() {
 
       {isOpen && (
         <ul className="nav-links">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Projects</a></li>
-          <li><a href="#">Contact</a></li>
+        <Link to="/Projects"> Projects </Link>
+        <Link to="/Contact"> Contact </Link>
         </ul>
       )}
     </nav>
