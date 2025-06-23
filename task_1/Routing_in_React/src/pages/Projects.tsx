@@ -5,10 +5,11 @@ import React from "react";
 const Projects: React.FC = () => {
   return (
     <>
-      <p>testing this</p>
+      <p> I am currently working on some projects. </p>
+      <p> Most of them are private, but I will share some details soon. </p>
       <Link to="/">Go to Home</Link>
       <br />
-      <Link to="/Contact">Contact me here</Link>
+      <Link to="https://github.com/Moniaar">Catch me if you can</Link>
     </>
   );
 };
