@@ -16,7 +16,6 @@ export default function Navbar() {
       {isOpen && (
         <ul className="nav-links">
         <Link to="/Projects"> Projects </Link>
-        <Link to="/Contact"> Contact </Link>
         </ul>
       )}
     </nav>
