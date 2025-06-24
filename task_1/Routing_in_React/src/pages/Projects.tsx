@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import React from "react";
 
 
+// for typescript to undertand this is a React component
 const Projects: React.FC = () => {
   return (
     <>
