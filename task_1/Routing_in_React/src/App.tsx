@@ -20,10 +20,6 @@ function App() {
           <Route path="/Projects" element={<Projects />} />
         </Routes>
       </Router>
-      <div>
-        <img src={design} className="logo" alt="My website" />
-      </div>
-      <h1>Coming Soon ...</h1>
     </>
   )
 }
