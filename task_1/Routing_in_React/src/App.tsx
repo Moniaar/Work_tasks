@@ -1,25 +1,20 @@
-import { useState } from 'react'
-
-// To enable Routing
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-
-import design from './assets/design1.png'
-import Projects from './pages/Projects.tsx'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import Navbar from './pages/Navbar'
+import Home from './pages/Home'
+import Projects from './pages/Projects'
 import './App.css'
-
-//Mentioning components here
-import Navbar from '../src/pages/Navbar.tsx'
 
 function App() {
   return (
     <>
-      <Router>
-        <Navbar />
+    <Router>
+      <Navbar />
+      <div className="pt-20 px-4">
         <Routes>
-          {/* Defined routes here */}
-          <Route path="/Projects" element={<Projects />} />
+          <Route path="/projects" element={<Projects />} />
         </Routes>
-      </Router>
+      </div>
+    </Router>
     </>
   )
 }
